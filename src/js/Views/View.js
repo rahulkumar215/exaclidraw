@@ -14,7 +14,7 @@ class View {
         e.target.closest(".option").classList.add("option--selected");
 
         if (selectedTool === "eraser") {
-          this._canvas.style.cursor = `url("../img/icons8-circle-15.png"), auto`;
+          this._canvas.style.cursor = `url("../img/icons8-circle-15.png"), crosshair`;
         } else {
           this._canvas.style.cursor = `crosshair`;
         }
