@@ -64,13 +64,13 @@ const drawTriangle = (e) => {
   state.canvas.context.beginPath();
   state.canvas.context.moveTo(state.prevMouseX, state.prevMouseY);
   state.canvas.context.lineTo(
-    e.type === "mousedown" ? e.offsetX : e.touches[0].clientX,
-    e.type === "mousedown" ? e.offsetY : e.touches[0].clientY
+    e.type === "mousemove" ? e.offsetX : e.touches[0].clientX,
+    e.type === "mousemove" ? e.offsetY : e.touches[0].clientY
   );
   state.canvas.context.lineTo(
     state.prevMouseX * 2 -
-      (e.type === "mousedown" ? e.offsetX : e.touches[0].clientX),
-    e.type === "mousedown" ? e.offsetY : e.touches[0].clientY
+      (e.type === "mousemove" ? e.offsetX : e.touches[0].clientX),
+    e.type === "mousemove" ? e.offsetY : e.touches[0].clientY
   );
   state.canvas.context.closePath();
   state.canvas.context.stroke();
@@ -81,12 +81,12 @@ const drawCircle = (e) => {
   let radius = Math.sqrt(
     Math.pow(
       state.prevMouseX -
-        (e.type === "mousedown" ? e.offsetX : e.touches[0].clientX),
+        (e.type === "mousemove" ? e.offsetX : e.touches[0].clientX),
       2
     ) +
       Math.pow(
         state.prevMouseY -
-          (e.type === "mousedown" ? e.offsetY : e.touches[0].clientY),
+          (e.type === "mousemove" ? e.offsetY : e.touches[0].clientY),
         2
       )
   );
@@ -102,12 +102,12 @@ const drawCircle = (e) => {
 
 const drawRect = (e) => {
   state.canvas.context.strokeRect(
-    e.type === "mousedown" ? e.offsetX : e.touches[0].clientX,
-    e.type === "mousedown" ? e.offsetY : e.touches[0].clientY,
+    e.type === "mousemove" ? e.offsetX : e.touches[0].clientX,
+    e.type === "mousemove" ? e.offsetY : e.touches[0].clientY,
     state.prevMouseX -
-      (e.type === "mousedown" ? e.offsetX : e.touches[0].clientX),
+      (e.type === "mousemove" ? e.offsetX : e.touches[0].clientX),
     state.prevMouseY -
-      (e.type === "mousedown" ? e.offsetY : e.touches[0].clientY)
+      (e.type === "mousemove" ? e.offsetY : e.touches[0].clientY)
   );
 };
 
@@ -137,8 +137,8 @@ export const keepDrawing = (e) => {
     state.canvas.context.lineCap = "round";
     state.canvas.context.lineJoin = "round";
     state.canvas.context.lineTo(
-      e.type === "mousedown" ? e.offsetX : e.touches[0].clientX,
-      e.type === "mousedown" ? e.offsetY : e.touches[0].clientY
+      e.type === "mousemove" ? e.offsetX : e.touches[0].clientX,
+      e.type === "mousemove" ? e.offsetY : e.touches[0].clientY
     );
     state.canvas.context.stroke();
   }
