@@ -1,0 +1,93 @@
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+#canvas {
+  background-color: inherit;
+  cursor: crosshair;
+}
+
+.tools {
+  position: absolute;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #272727;
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 1rem;
+
+  .tools_options {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+
+    .option {
+      fill: #fff;
+      cursor: pointer;
+      border-radius: 0.5rem;
+      padding: 0.5rem;
+      width: 3.2rem;
+      height: 3.2rem;
+
+      &:hover {
+        background: rgb(49, 48, 59);
+      }
+
+      &:active {
+        background: rgb(49, 48, 59);
+        border: 1px solid #d0ccff;
+      }
+
+      &--selected {
+        background-color: #403e6a;
+      }
+    }
+
+    .action {
+      fill: #fff;
+      cursor: pointer;
+      border-radius: 0.5rem;
+      padding: 0.5rem;
+      width: 3.2rem;
+      height: 3.2rem;
+
+      &:hover {
+        background: rgb(49, 48, 59);
+      }
+
+      &:active {
+        background: #403e6a;
+        border: 1px solid #d0ccff;
+      }
+
+      &--selected {
+        background-color: #403e6a;
+      }
+    }
+  }
+
+  &_basic {
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 50rem;
+    width: 100%;
+
+    @media only screen and (max-width: $bp-small) {
+      max-width: 30rem;
+    }
+  }
+
+  &_actions {
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 20rem;
+    width: 100%;
+  }
+}
